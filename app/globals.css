@@ -93,3 +93,22 @@ main[data-theme=dark] .mobileNav button{color:#fff5e5}
 @keyframes brandGlint{0%,75%,100%{opacity:1}83%{opacity:.68;filter:drop-shadow(0 0 10px #e9c27d)}90%{opacity:1}}
 @media(max-width:700px){.header .brand{min-width:0;max-width:185px}.premiumBrand{gap:6px}.premiumBrandSymbol{width:39px;height:51px}.premiumBrandCopy strong{font-size:10px}.premiumBrandCopy small{font-size:7px;letter-spacing:0}.footerTop .premiumBrandCopy strong{font-size:13px}}
 @media(prefers-reduced-motion:reduce){.premiumBrandSymbol{animation:none}.goldBtn{transition:none}}
+
+
+/* 2026-10-16: larger accessible identity and retracting bilingual widget */
+.header{height:112px}.headerInner{gap:15px}.header .brand{flex:0 0 auto;max-width:370px;min-width:250px;height:100px}.header .premiumBrand{gap:17px}.header .premiumBrandSymbol{width:85px;height:94px;color:#c29a56;filter:drop-shadow(0 0 5px #cba76655)}.header .premiumBrandCopy strong{font-size:clamp(13px,1.2vw,18px)}.header .premiumBrandCopy small{font-size:clamp(9px,.8vw,12px)}.footerTop .premiumBrandSymbol{width:100px;height:110px}.footerTop .premiumBrandCopy{color:var(--text)}main[data-theme=dark] .footerTop .premiumBrandCopy{color:#fff7e9}.footerTop .premiumBrandCopy strong{font-size:20px}.footerTop .premiumBrandCopy small{font-size:12px}
+.floatingIdentity{direction:ltr!important;bottom:calc(24px + env(safe-area-inset-bottom,0px));right:20px!important;left:auto!important;height:70px;max-width:none;width:70px;padding:7px;gap:0;display:flex;justify-content:flex-start;background:#14212b;border:1px solid #b89b68;box-shadow:0 12px 34px #0005;pointer-events:auto;animation:identityExpand 12s ease-in-out infinite;will-change:width}
+.floatingIdentity .identityMark{width:54px;height:54px;flex:0 0 54px;background:transparent;padding:0;position:relative;z-index:1}
+.floatingIdentity .premiumBrandCompact .premiumBrandSymbol{width:49px;height:55px;color:#e8bd77}
+.floatingIdentity .identityTicker{height:34px;min-width:0;width:0;flex:0 0 auto;position:relative;overflow:hidden;display:block;color:#fff4dc;line-height:34px;text-align:center!important;font-size:12px;animation:identityTextWidth 12s ease-in-out infinite}
+.floatingIdentity .identityTicker span{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;height:34px;white-space:nowrap;transform:none!important;animation:none!important;opacity:0}
+.floatingIdentity .identityTicker span:first-child{animation:identityArabic 12s linear infinite!important}
+.floatingIdentity .identityTicker span:last-child{animation:identityEnglish 12s linear infinite!important}
+@keyframes identityExpand{0%,5%,43%,55%,93%,100%{width:70px}12%,36%,62%,86%{width:268px}}
+@keyframes identityTextWidth{0%,5%,43%,55%,93%,100%{width:0}12%,36%,62%,86%{width:198px}}
+@keyframes identityArabic{0%,8%,42%,100%{opacity:0}13%,35%{opacity:1}}
+@keyframes identityEnglish{0%,58%,92%,100%{opacity:0}63%,85%{opacity:1}}
+main[dir=rtl] .floatingIdentity{right:20px!important;left:auto!important}
+@media(max-width:1050px){.header .brand{min-width:190px}.header .premiumBrandSymbol{width:70px;height:80px}}
+@media(max-width:760px){.header{height:92px}.header .brand{height:86px;min-width:0;max-width:205px}.header .premiumBrand{gap:8px}.header .premiumBrandSymbol{width:58px;height:72px}.header .premiumBrandCopy strong{font-size:12px}.header .premiumBrandCopy small{font-size:9px}.headerActions{gap:9px}.headerInner{padding-inline:12px}.mobileNav{top:92px}.footerTop .premiumBrandSymbol{width:85px;height:95px}.footerTop .premiumBrandCopy strong{font-size:16px}.floatingIdentity{bottom:calc(88px + env(safe-area-inset-bottom,0px));right:12px!important;height:62px;width:62px;animation-name:identityExpandMobile}.floatingIdentity .identityMark{width:46px;height:46px;flex-basis:46px}.floatingIdentity .premiumBrandCompact .premiumBrandSymbol{width:44px;height:48px}.floatingIdentity .identityTicker{font-size:10px;animation-name:identityTextWidthMobile}@keyframes identityExpandMobile{0%,5%,43%,55%,93%,100%{width:62px}12%,36%,62%,86%{width:238px}}@keyframes identityTextWidthMobile{0%,5%,43%,55%,93%,100%{width:0}12%,36%,62%,86%{width:176px}}main[dir=rtl] .floatingIdentity{right:12px!important}}
+@media(prefers-reduced-motion:reduce){.floatingIdentity{animation:none;width:62px}.floatingIdentity .identityTicker,.floatingIdentity .identityTicker span{animation:none!important;width:0;opacity:0}}
